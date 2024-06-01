@@ -5,16 +5,17 @@ import imgSrc from "../assets/back1.jpg";
 import Home from "./Home";
 import Skills from "./Skills";
 import Projects from "./Projects";
+import ProjectMobile from "./ProjectMobile";
 
 function SectionOne() {
-  const [pageIndex,setPageIndex] = useState(0);
+  const [pageIndex, setPageIndex] = useState(0);
   return (
     <div className="relative h-screen w-full">
-      <Header />
+      <Header pageIndex={pageIndex} />
       {pageIndex === 0 && <Home />}
       {pageIndex === 1 && <Skills />}
       {pageIndex === 2 && <Projects />}
-      <Footer setPageIndex={setPageIndex} pageIndex={pageIndex}/>
+      <Footer setPageIndex={setPageIndex} pageIndex={pageIndex} />
     </div>
   );
 }

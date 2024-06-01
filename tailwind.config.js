@@ -11,7 +11,7 @@ export default {
       },
       fontFamily:{
         ConcertOne : 'Concert One'
-      }
+      },
     },
   },
   plugins: [],

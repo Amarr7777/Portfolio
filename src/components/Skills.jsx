@@ -41,7 +41,7 @@ function Skills() {
         break;
       case 8:
         setIndexArray([0, 1, 2]);
-        setIndexMobile(9)
+        setIndexMobile(0)
         break;
       default:
         setIndexArray([0, 1, 2]);

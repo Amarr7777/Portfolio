@@ -63,8 +63,8 @@ function SkillCardMobile({ indexMobile }) {
             </h3>
           </div>
         </div>
-        <div className="mt-4 overflow-scroll">
-          <p className="text-pretty text-sm text-gray-500">{skill.content}</p>
+        <div className="mt-1 overflow-scroll">
+          <p className="text-sm text-gray-500">{skill.content}</p>
         </div>
       </div>
     </>

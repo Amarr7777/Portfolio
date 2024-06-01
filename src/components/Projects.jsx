@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import ProjectMobile from "./ProjectMobile";
+import ProjectWeb from "./ProjectWeb";
+
 
 function Projects() {
   return (
-    <div className="text-white flex items-center justify-center h-screen">
-      Projects
-    </div>
+    <>
+    <ProjectMobile/>
+    <ProjectWeb/>
+    </>
   );
 }
 
