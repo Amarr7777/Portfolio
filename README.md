@@ -5,12 +5,8 @@ Welcome to my portfolio website! This repository contains the source code for my
 ## Table of Contents
 - [About](#about)
 - [Features](#features)
-- [Technologies](#technologies)
 - [Installation](#installation)
-- [Usage](#usage)
 - [Screenshots](#screenshots)
-- [Contact](#contact)
-- [License](#license)
 
 ## About
 

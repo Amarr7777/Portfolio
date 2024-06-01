@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage:{
+        'hero': "url('src/assets/back1.jpg')",
+      },
       fontFamily:{
         ConcertOne : 'Concert One'
       }

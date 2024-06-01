@@ -1,18 +1,22 @@
-import React from 'react'
-import Header from './Header'
-import Footer from './Footer'
+import React, { useState } from "react";
+import Header from "./Header";
+import Footer from "./Footer";
+import imgSrc from "../assets/back1.jpg";
+import Home from "./Home";
+import Skills from "./Skills";
+import Projects from "./Projects";
 
-function SectionONe() {
+function SectionOne() {
+  const [pageIndex,setPageIndex] = useState(0);
   return (
-    <>
-    <Header/>
-    <div className='flex flex-col h-screen justify-center items-center'>
-        <h1 className='text-white text-5xl sm:text-5xl md:text-7xl lg:text-7xl font-ConcertOne'>WELCOME</h1>
-        <p className='font-ConcertOne text-white font-thin leading-5 text-justify px-5 md:px-20 lg:px-60 py-5'>Hello! I'm Amar G Nath, a passionate and dedicated software engineer with a strong background in web and mobile development. With a keen interest in solving complex problems through innovative solutions, I have honed my skills across various technologies and frameworks.</p>
+    <div className="relative h-screen w-full">
+      <Header />
+      {pageIndex === 0 && <Home />}
+      {pageIndex === 1 && <Skills />}
+      {pageIndex === 2 && <Projects />}
+      <Footer setPageIndex={setPageIndex} pageIndex={pageIndex}/>
     </div>
-    <Footer/>
-    </>
-  )
+  );
 }
 
-export default SectionONe
+export default SectionOne;
