@@ -1,9 +1,9 @@
 import React from 'react'
-import Hello from './components/hello'
+import SectionONe from './components/SectionONe'
 
 function App() {
   return (
-   <Hello/>
+   <SectionONe/>
   )
 }
 
