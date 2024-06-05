@@ -16,13 +16,16 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@react-navigation/native": "^6.1.17",
+    "@tsparticles/react": "^3.0.0",
     "axios": "^1.6.8",
     "font-awesome": "^4.7.0",
     "framer-motion": "^11.2.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-fontawesome": "^1.7.1",
-    "react-router-dom": "^6.23.0"
+    "react-router-dom": "^6.23.0",
+    "react-tsparticles": "^2.12.2",
+    "tsparticles": "^3.4.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 function ProjectWeb() {
   const [projectIndex, setProjectIndex] = useState(0);
@@ -29,58 +30,134 @@ function ProjectWeb() {
     },
   ];
   return (
-    <div className="text-white hidden md:flex items-center justify-evenly h-screen">
-      <div className="flex items-start justify-evenly w-3/4 gap-5 ">
-        <div className="w-3/4 p-5 md:h-80">
-          <h1 className="text-white text-5xl font-semibold">
+    <div className="text-white hidden md:flex items-center justify-evenly h-screen ">
+      <div className="flex items-start justify-evenly w-full gap-5 px-20">
+        <motion.div
+          key={projectIndex}
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.1, duration: 0.5 }}
+          exit={{ x: -100 }}
+          className="w-3/4 py-5 md:h-80"
+        >
+          <h1 className="text-white text-5xl font-semibold font-ConcertOne">
             {projects[projectIndex].name}
           </h1>
-          <p className="text-white mt-6">{projects[projectIndex].content}</p>
+          <p className="text-white mt-6 font-ConcertOne text-justify font-thin">
+            {projects[projectIndex].content}
+          </p>
           <div className="pt-6">
-            <a className="pt-2 underline" href={projects[projectIndex].link}>
-              Github
+            <a
+              className="pt-2  font-ConcertOne"
+              href={projects[projectIndex].link}
+            >
+              <p
+                className="bg-gradient-to-r from-purple-600 via-red-500 to-orange-400 w-fit bg-no-repeat"
+                style={{
+                  backgroundSize: "100% 3px",
+                  backgroundPosition: "left bottom",
+                }}
+              >
+                Github
+              </p>
             </a>
           </div>
-        </div>
-        <div className="w-1/4 p-5">
-          <h1 className="text-white text-5xl font-semibold">Projects</h1>
+        </motion.div>
+        <div className="lg:w-1/4 lg:p-5 py-5 pr-5 w-1/4">
+          <h1 className="text-white text-5xl font-semibold font-ConcertOne">
+            Projects
+          </h1>
           <ul className="mt-6 space-y-4">
-            <li
-              className="text-white cursor-pointer"
+            <motion.li
+              whileHover={{
+                scale: 1.1,
+                transition: { duration: 1 },
+              }}
+              whileTap={{ scale: 0.9 }}
+              className="text-white cursor-pointer font-ConcertOne "
               onClick={() => {
                 setProjectIndex(0);
               }}
             >
-              OrderOncampus
-            </li>
-            <li
-              className="text-white cursor-pointer"
+              <p
+                className="bg-gradient-to-r from-purple-600 via-red-500 to-orange-400 w-fit bg-no-repeat"
+                style={{
+                  backgroundSize: "100% 3px",
+                  backgroundPosition: "left bottom",
+                }}
+              >
+                OrderOnCampus
+              </p>
+            </motion.li>
+            <motion.li
+              whileHover={{
+                scale: 1.1,
+                transition: { duration: 1 },
+              }}
+              whileTap={{ scale: 0.9 }}
+              className="text-white cursor-pointer font-ConcertOne"
               onClick={() => {
                 setProjectIndex(1);
               }}
             >
-              VocalVision
-            </li>
-            <li
-              className="text-white cursor-pointer"
+              <p
+                className="bg-gradient-to-r from-purple-600 via-red-500 to-orange-400 w-fit bg-no-repeat"
+                style={{
+                  backgroundSize: "100% 3px",
+                  backgroundPosition: "left bottom",
+                }}
+              >
+                VocalVision
+              </p>
+            </motion.li>
+            <motion.li
+              whileHover={{
+                scale: 1.1,
+                transition: { duration: 1 },
+              }}
+              whileTap={{ scale: 0.9 }}
+              className="text-white cursor-pointer font-ConcertOne "
               onClick={() => {
                 setProjectIndex(2);
               }}
             >
-              Bookstore
-            </li>
-            <li
-              className="text-white cursor-pointer"
+              <p
+                className="bg-gradient-to-r from-purple-600 via-red-500 to-orange-400 w-fit bg-no-repeat"
+                style={{
+                  backgroundSize: "100% 3px",
+                  backgroundPosition: "left bottom",
+                }}
+              >
+                Bookstore
+              </p>
+            </motion.li>
+            <motion.li
+              whileHover={{
+                scale: 1.1,
+                transition: { duration: 1 },
+              }}
+              whileTap={{ scale: 0.9 }}
+              className="text-white cursor-pointer font-ConcertOne "
               onClick={() => {
                 setProjectIndex(3);
               }}
             >
-              DoneWithIt
-            </li>
+              <p
+                className="bg-gradient-to-r from-purple-600 via-red-500 to-orange-400 w-fit bg-no-repeat"
+                style={{
+                  backgroundSize: "100% 3px",
+                  backgroundPosition: "left bottom",
+                }}
+              >
+                DoneWithIt
+              </p>
+            </motion.li>
           </ul>
         </div>
       </div>
+      
     </div>
+
   );
 }
 

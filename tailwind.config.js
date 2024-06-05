@@ -10,7 +10,7 @@ export default {
         'hero': "url('src/assets/back1.jpg')",
       },
       fontFamily:{
-        ConcertOne : 'Concert One'
+        ConcertOne : 'Raleway'
       },
     },
   },

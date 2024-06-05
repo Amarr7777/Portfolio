@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import { motion, useMotionValue, useScroll, useTransform } from "framer-motion";
 
 const skills = [
   {
@@ -49,14 +50,21 @@ const skills = [
 ];
 
 function SkillList({ indexArray }) {
+  
+    const Tref = useRef(null);
+    const {scrollXProgress} = useScroll({
+      target: Tref,
+      axis: "x",
+    });
+    
   return (
     <>
       {indexArray.map((index) => (
-        <div
-          key={skills[index].name}
-          className="hidden md:relative md:block overflow-scroll md:h-96 md:w-96 rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8"
-        >
-          <span className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"></span>
+        <motion.div 
+        ref={Tref}
+        style={ {opacity: scrollXProgress}}
+        className="hidden md:relative md:block overflow-scroll md:h-96 md:w-96 rounded-lg border border-gray-100 border-b-0 p-4 sm:p-6 lg:p-8">
+          <span className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-purple-600 via-red-500 to-orange-400"></span>
           <div className="sm:flex sm:justify-between sm:gap-4">
             <div>
               <h3 className="text-lg font-bold text-white sm:text-xl">
@@ -65,11 +73,11 @@ function SkillList({ indexArray }) {
             </div>
           </div>
           <div className="mt-4">
-            <p className="text-pretty text-sm text-gray-500">
+            <p className="text-pretty text-sm text-white font-thin">
               {skills[index].content}
             </p>
           </div>
-        </div>
+        </motion.div>
       ))}
     </>
   );

@@ -6,6 +6,7 @@ import Home from "./Home";
 import Skills from "./Skills";
 import Projects from "./Projects";
 import ProjectMobile from "./ProjectMobile";
+import SideBar from "./SideBar";
 
 function SectionOne() {
   const [pageIndex, setPageIndex] = useState(0);
@@ -15,6 +16,7 @@ function SectionOne() {
       {pageIndex === 0 && <Home />}
       {pageIndex === 1 && <Skills />}
       {pageIndex === 2 && <Projects />}
+      <SideBar setPageIndex={setPageIndex} pageIndex={pageIndex} />
       <Footer setPageIndex={setPageIndex} pageIndex={pageIndex} />
     </div>
   );

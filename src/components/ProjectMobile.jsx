@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 function ProjectMobile() {
   const [projectIndex, setProjectIndex] = useState(0);
@@ -32,13 +33,13 @@ function ProjectMobile() {
   return (
     <>
       {projectShow ? (
-        <div className=" flex flex-col h-screen justify-center items-center md:hidden">
-          <h1 className="text-white text-center text-5xl font-semibold capitalize">
-            Projects
+        <div className=" flex flex-col h-screen justify-center items-center md:hidden ">
+          <h1 className="text-white text-center text-5xl font-semibold font-ConcertOne capitalize">
+            PROJECTS
           </h1>
           <ul className="mt-6 space-y-4">
             <li
-              className="text-white text-center  cursor-pointer"
+              className="text-white text-center font-ConcertOne  cursor-pointer"
               onClick={() => {
                 setProjectIndex(0);
                 setProjectShow(false);
@@ -47,7 +48,7 @@ function ProjectMobile() {
               OrderOncampus
             </li>
             <li
-              className="text-white text-center  cursor-pointer"
+              className="text-white text-center font-ConcertOne  cursor-pointer"
               onClick={() => {
                 setProjectIndex(1);
                 setProjectShow(false);
@@ -56,7 +57,7 @@ function ProjectMobile() {
               VocalVision
             </li>
             <li
-              className="text-white text-center  cursor-pointer"
+              className="text-white text-center font-ConcertOne  cursor-pointer"
               onClick={() => {
                 setProjectIndex(2);
                 setProjectShow(false);
@@ -65,7 +66,7 @@ function ProjectMobile() {
               Bookstore
             </li>
             <li
-              className="text-white text-center  cursor-pointer"
+              className="text-white text-center font-ConcertOne  cursor-pointer"
               onClick={() => {
                 setProjectIndex(3);
                 setProjectShow(false);
@@ -76,14 +77,14 @@ function ProjectMobile() {
           </ul>
         </div>
       ) : (
-        <div className="flex flex-col h-screen items-start justify-center p-5">
-          <h1 className="text-white text-xl font-semibold">
+        <div className="flex flex-col h-screen items-start justify-center p-5 ">
+          <h1 className="text-white text-xl font-semibold font-ConcertOne">
             {projects[projectIndex].name}
           </h1>
-          <p className="text-white text-sm mt-6 text-justify">
+          <p className="text-white text-sm mt-6 text-justify font-ConcertOne font-thin">
             {projects[projectIndex].content}
           </p>
-          <div className="flex items-center justify-evenly gap-5">
+          <div className="flex items-center justify-evenly font-ConcertOne gap-5">
             <a
               className="pt-2 text-white underline "
               href={projects[projectIndex].link}
@@ -91,7 +92,7 @@ function ProjectMobile() {
               Github
             </a>
             <p
-              className="pt-2 text-white underline"
+              className="pt-2 text-white font-ConcertOne underline"
               onClick={() => {
                 setProjectShow(true);
               }}
@@ -101,6 +102,7 @@ function ProjectMobile() {
           </div>
         </div>
       )}
+      
     </>
   );
 }
