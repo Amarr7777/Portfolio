@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import SkillCard from "./SkillCard";
 import SkillCardMobile from "./SkillCardMobile";
 import { motion } from "framer-motion";
+import ChevronRight from "../assets/ChevronRight";
+import ChevronLeft from "../assets/ChevronLeft";
 
 function Skills() {
   const [indexArray, setIndexArray] = useState([0, 1, 2]);
@@ -49,7 +51,6 @@ function Skills() {
         setIndexMobile(0);
         break;
     }
-    console.log("Prev", indexArray);
   };
   const next = () => {
     switch (indexArray[0]) {
@@ -94,44 +95,18 @@ function Skills() {
         setIndexMobile(0);
         break;
     }
-    console.log("Next", indexArray);
   };
 
   return (
     <div className="flex h-screen items-center justify-evenly gap-5 px-5 ">
       <button onClick={prev} className="text-white bg-transparent">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          class="bi bi-chevron-left"
-          viewBox="0 0 16 16"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
-          />
-        </svg>
+        <ChevronLeft/>
       </button>
       <SkillCard indexArray={indexArray} />
       <SkillCardMobile indexMobile={indexMobile} />
       <button onClick={next} className="text-white bg-transparent">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          class="bi bi-chevron-right"
-          viewBox="0 0 16 16"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
-          />
-        </svg>
+        <ChevronRight/>
       </button>
-      
     </div>
   );
 }

@@ -1,83 +1,63 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import projects from '../constants/projects'
 
 function ProjectMobile() {
   const [projectIndex, setProjectIndex] = useState(0);
-  const [projectShow, setProjectShow] = useState(true);
-  const projects = [
-    {
-      name: "OrderOnCampus",
-      link: "https://github.com/Amarr7777/orderOnCampus-full.git",
-      content:
-        "orderOnCampus includes client and restaurant interfaces. The React Native and Redux-powered client app lets users browse menus, place orders, and track deliveries. The React and Redux restaurant dashboard empowers owners to manage orders, update menus, and analyze sales. Using Node.js, Express, MongoDB, and Stripe ensures seamless transactions.",
-    },
-    {
-      name: "VocalVision",
-      link: "https://github.com/Amarr7777/VocalVision.git",
-      content:
-        "VocalVision: A web app for visually impaired, converting images to audio descriptions. Uses YOLO for object detection, gTTS for narration. Accessible and easy integration. Frontend: React.js, Backend: Flask, CV: OpenCV, TTS: gTTS. #AccessibilityTech",
-    },
-    {
-      name: "BookStore",
-      link: "https://github.com/Amarr7777/bookstore.git",
-      content:
-        "This a bookstore where data is fetched from NY times API and shown in the web app and a search bar is which is completely functional",
-    },
-    {
-      name: "DoneWithit",
-      link: "https://github.com/Amarr7777/To-Do-App.git",
-      content:
-        "DoneWithit is a sleek and intuitive to-do app built entirely with React, focusing on simplicity and user experience. This project showcases the fundamental capabilities of React, including state management, component-based architecture, and responsive design.",
-    },
-  ];
+  const [projectShow, setProjectShow] = useState(true);  
+  const [isFlipped, setIsFlipped] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const handleFlip = () => {
+    if (!isAnimating) {
+      setIsFlipped(!isFlipped);
+      setIsAnimating(true);
+    }
+  };
+
+  const handleAnimationComplete = () => {
+    setIsAnimating(false);
+  };
+
   return (
-    <>
-      {projectShow ? (
-        <div className=" flex flex-col h-screen justify-center items-center md:hidden ">
+    <div className="flip-card md:hidden">
+      <motion.div
+        initial={{ rotateY: 0 }}
+        animate={{ rotateY: isFlipped ? 180 : 0 }}
+        transition={{ duration: 0.6, animationDirection: "normal" }}
+        onAnimationComplete={handleAnimationComplete}
+        className="flip-card-inner"
+      >
+        <div className="flip-card-front flex flex-col h-screen justify-center items-center w-full">
           <h1 className="text-white text-center text-5xl font-semibold font-ConcertOne capitalize">
             PROJECTS
           </h1>
-          <ul className="mt-6 space-y-4">
-            <li
-              className="text-white text-center font-ConcertOne  cursor-pointer"
-              onClick={() => {
-                setProjectIndex(0);
-                setProjectShow(false);
-              }}
-            >
-              OrderOncampus
-            </li>
-            <li
-              className="text-white text-center font-ConcertOne  cursor-pointer"
-              onClick={() => {
-                setProjectIndex(1);
-                setProjectShow(false);
-              }}
-            >
-              VocalVision
-            </li>
-            <li
-              className="text-white text-center font-ConcertOne  cursor-pointer"
-              onClick={() => {
-                setProjectIndex(2);
-                setProjectShow(false);
-              }}
-            >
-              Bookstore
-            </li>
-            <li
-              className="text-white text-center font-ConcertOne  cursor-pointer"
-              onClick={() => {
-                setProjectIndex(3);
-                setProjectShow(false);
-              }}
-            >
-              DoneWithIt
-            </li>
+          <ul className="mt-6 space-y-4 flex flex-col items-center justify-center">
+            {projects.map((project, index) => (
+              <motion.li
+                whileHover={{
+                  scale: 1.1,
+                  transition: { duration: 0.1 },
+                }}
+                whileTap={{ scale: 0.9 }}
+                key={index}
+                className="text-white text-center font-ConcertOne cursor-pointer bg-gradient-to-r from-purple-600 via-red-500 to-orange-400 w-fit bg-no-repeat"
+                style={{
+                  backgroundSize: "100% 3px",
+                  backgroundPosition: "left bottom",
+                }}
+                onClick={() => {
+                  setProjectIndex(index);
+                  setProjectShow(false);
+                  handleFlip();
+                }}
+              >
+                {project.name}
+              </motion.li>
+            ))}
           </ul>
         </div>
-      ) : (
-        <div className="flex flex-col h-screen items-start justify-center p-5 ">
+        <div className="flip-card-back flex flex-col h-screen items-start justify-center p-5">
           <h1 className="text-white text-xl font-semibold font-ConcertOne">
             {projects[projectIndex].name}
           </h1>
@@ -85,25 +65,43 @@ function ProjectMobile() {
             {projects[projectIndex].content}
           </p>
           <div className="flex items-center justify-evenly font-ConcertOne gap-5">
-            <a
-              className="pt-2 text-white underline "
+            <motion.a
+            whileHover={{
+              scale: 1.1,
+              transition: { duration: 0.1 },
+            }}
+            whileTap={{ scale: 0.9 }}
+              className="pt-2 text-white bg-gradient-to-r from-purple-600 via-red-500 to-orange-400 w-fit bg-no-repeat"
               href={projects[projectIndex].link}
+              style={{
+                backgroundSize: "100% 3px",
+                backgroundPosition: "left bottom",
+              }}
             >
               Github
-            </a>
-            <p
-              className="pt-2 text-white font-ConcertOne underline"
+            </motion.a>
+            <motion.p
+            whileHover={{
+              scale: 1.1,
+              transition: { duration: 0.1 },
+            }}
+            whileTap={{ scale: 0.9 }}
+              className="pt-2 text-white font-ConcertOne bg-gradient-to-r from-purple-600 via-red-500 to-orange-400 w-fit bg-no-repeat cursor-pointer"
+              style={{
+                backgroundSize: "100% 3px",
+                backgroundPosition: "left bottom",
+              }}
               onClick={() => {
                 setProjectShow(true);
+                handleFlip();
               }}
             >
               Back
-            </p>
+            </motion.p>
           </div>
         </div>
-      )}
-      
-    </>
+      </motion.div>
+    </div>
   );
 }
 
