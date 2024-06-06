@@ -14,7 +14,7 @@ function SectionOne() {
     <div className="relative h-screen w-full">
       <Header pageIndex={pageIndex} />
       {pageIndex === 0 && <Home />}
-      {pageIndex === 1 && <Skills />}
+      {pageIndex === 1 && <Skills/>}
       {pageIndex === 2 && <Projects />}
       <SideBar setPageIndex={setPageIndex} pageIndex={pageIndex} />
       <Footer setPageIndex={setPageIndex} pageIndex={pageIndex} />

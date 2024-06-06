@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import projects from '../constants/projects'
+import projects from "../constants/projects";
 
 function ProjectWeb() {
   const [projectIndex, setProjectIndex] = useState(0);
-  
+
   return (
     <div className="text-white hidden md:flex items-center justify-evenly h-screen ">
       <div className="flex items-start justify-evenly w-full gap-5 px-20">
@@ -27,7 +27,12 @@ function ProjectWeb() {
               className="pt-2  font-ConcertOne"
               href={projects[projectIndex].link}
             >
-              <p
+              <motion.p
+                whileHover={{
+                  scale: 1.1,
+                  transition: { duration: 0.1 },
+                }}
+                whileTap={{ scale: 0.9 }}
                 className="bg-gradient-to-r from-purple-600 via-red-500 to-orange-400 w-fit bg-no-repeat"
                 style={{
                   backgroundSize: "100% 3px",
@@ -35,7 +40,7 @@ function ProjectWeb() {
                 }}
               >
                 Github
-              </p>
+              </motion.p>
             </a>
           </div>
         </motion.div>
@@ -131,9 +136,7 @@ function ProjectWeb() {
           </ul>
         </div>
       </div>
-      
     </div>
-
   );
 }
 
