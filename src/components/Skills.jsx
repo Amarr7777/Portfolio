@@ -40,7 +40,7 @@ function Skills() {
       <div className="flex h-screen items-center justify-evenly gap-5 px-5 w-full ">
         <button
           onClick={prev}
-          className="text-white bg-transparent absolute left-5"
+          className="text-white bg-transparent absolute left-5 z-20"
         >
           <ChevronLeft />
         </button>
@@ -48,7 +48,7 @@ function Skills() {
         <SkillCardMobile indexMobile={indexMobile} direction={direction}/>
         <button
           onClick={next}
-          className="text-white bg-transparent absolute right-5"
+          className="text-white bg-transparent absolute right-5 z-20"
         >
           <ChevronRight />
         </button>
