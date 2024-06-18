@@ -19,7 +19,7 @@ function SkillList({ indexArray,direction }) {
           animate={positions[i]}
           variants={sliderVarients}
           transition={{ duration: 0.5 }}
-          className="hidden md:absolute md:block overflow-scroll scroll-m-0 md:h-96 md:w-96 rounded-lg border border-gray-100 border-b-0 p-4 sm:p-6 lg:p-8"
+          className="hidden-scrollbar hidden md:absolute md:block overflow-scroll   md:h-96 md:w-96 rounded-lg border border-gray-100 border-b-0 p-4 sm:p-6 lg:p-8"
         >
           <span className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-purple-600 via-red-500 to-orange-400"></span>
           <div className="sm:flex sm:justify-between sm:gap-4">

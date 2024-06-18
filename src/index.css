@@ -24,3 +24,14 @@
 .flip-card-back {
   transform: rotateY(180deg);
 }
+
+/* Hide scrollbar for WebKit-based browsers (Chrome, Safari) */
+.hidden-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+.hidden-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
