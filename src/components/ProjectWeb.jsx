@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import projects from "../constants/projects";
+import projects from "../../constants/projects";
 
 function ProjectWeb() {
   const [projectIndex, setProjectIndex] = useState(0);
 
   return (
-    <div className="text-white hidden md:flex items-center justify-evenly h-screen ">
+    <div className="text-white hidden md:flex items-center justify-evenly h-screen">
       <div className="flex items-start justify-evenly w-full gap-5 px-20">
         <motion.div
           key={projectIndex}
@@ -24,7 +24,7 @@ function ProjectWeb() {
           </p>
           <div className="pt-6">
             <a
-              className="pt-2  font-ConcertOne"
+              className="pt-2 font-ConcertOne"
               href={projects[projectIndex].link}
             >
               <motion.p
@@ -44,95 +44,36 @@ function ProjectWeb() {
             </a>
           </div>
         </motion.div>
+
         <div className="lg:w-1/4 lg:p-5 py-5 pr-5 w-1/4">
           <h1 className="text-white text-5xl font-semibold font-ConcertOne">
             Projects
           </h1>
           <ul className="mt-6 space-y-4">
-            <motion.li
-              whileHover={{
-                scale: 1.1,
-                transition: { duration: 1 },
-              }}
-              whileTap={{ scale: 0.9 }}
-              className="text-white cursor-pointer font-ConcertOne "
-              onClick={() => {
-                setProjectIndex(0);
-              }}
-            >
-              <p
-                className="bg-gradient-to-r from-purple-600 via-red-500 to-orange-400 w-fit bg-no-repeat"
-                style={{
-                  backgroundSize: "100% 3px",
-                  backgroundPosition: "left bottom",
+            {projects.map((project, index) => (
+              <motion.li
+                key={index}
+                whileHover={{
+                  scale: 1.1,
+                  transition: { duration: 1 },
+                }}
+                whileTap={{ scale: 0.9 }}
+                className="text-white cursor-pointer font-ConcertOne"
+                onClick={() => {
+                  setProjectIndex(index);
                 }}
               >
-                OrderOnCampus
-              </p>
-            </motion.li>
-            <motion.li
-              whileHover={{
-                scale: 1.1,
-                transition: { duration: 1 },
-              }}
-              whileTap={{ scale: 0.9 }}
-              className="text-white cursor-pointer font-ConcertOne"
-              onClick={() => {
-                setProjectIndex(1);
-              }}
-            >
-              <p
-                className="bg-gradient-to-r from-purple-600 via-red-500 to-orange-400 w-fit bg-no-repeat"
-                style={{
-                  backgroundSize: "100% 3px",
-                  backgroundPosition: "left bottom",
-                }}
-              >
-                VocalVision
-              </p>
-            </motion.li>
-            <motion.li
-              whileHover={{
-                scale: 1.1,
-                transition: { duration: 1 },
-              }}
-              whileTap={{ scale: 0.9 }}
-              className="text-white cursor-pointer font-ConcertOne "
-              onClick={() => {
-                setProjectIndex(2);
-              }}
-            >
-              <p
-                className="bg-gradient-to-r from-purple-600 via-red-500 to-orange-400 w-fit bg-no-repeat"
-                style={{
-                  backgroundSize: "100% 3px",
-                  backgroundPosition: "left bottom",
-                }}
-              >
-                Bookstore
-              </p>
-            </motion.li>
-            <motion.li
-              whileHover={{
-                scale: 1.1,
-                transition: { duration: 1 },
-              }}
-              whileTap={{ scale: 0.9 }}
-              className="text-white cursor-pointer font-ConcertOne "
-              onClick={() => {
-                setProjectIndex(3);
-              }}
-            >
-              <p
-                className="bg-gradient-to-r from-purple-600 via-red-500 to-orange-400 w-fit bg-no-repeat"
-                style={{
-                  backgroundSize: "100% 3px",
-                  backgroundPosition: "left bottom",
-                }}
-              >
-                DoneWithIt
-              </p>
-            </motion.li>
+                <p
+                  className="bg-gradient-to-r from-purple-600 via-red-500 to-orange-400 w-fit bg-no-repeat"
+                  style={{
+                    backgroundSize: "100% 3px",
+                    backgroundPosition: "left bottom",
+                  }}
+                >
+                  {project.name}
+                </p>
+              </motion.li>
+            ))}
           </ul>
         </div>
       </div>
