@@ -18,10 +18,10 @@ const projects = [
         "This a bookstore where data is fetched from NY times API and shown in the web app and a search bar is which is completely functional",
     },
     {
-      name: "DoneWithit",
-      link: "https://github.com/Amarr7777/To-Do-App.git",
+      name: "GroomGuard",
+      link: "https://github.com/Amarr7777/GroomGuard-Attendance.git",
       content:
-        "DoneWithit is a sleek and intuitive to-do app built entirely with React, focusing on simplicity and user experience. This project showcases the fundamental capabilities of React, including state management, component-based architecture, and responsive design.",
+        "The Smart Attendance System is a revolutionary mobile app designed for educational institutions. It streamlines attendance by using facial biometric recognition to prevent proxy attendance and save time. The app also enforces grooming standards, promoting professionalism and discipline among students",
     },
   ];
 
