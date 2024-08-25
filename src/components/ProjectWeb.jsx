@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import projects from "../../constants/projects";
+import projects from "../constants/projects";
 
 function ProjectWeb() {
   const [projectIndex, setProjectIndex] = useState(0);
