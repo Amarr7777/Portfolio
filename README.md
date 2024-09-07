@@ -6,7 +6,7 @@ Welcome to my portfolio website! This repository contains the source code for my
 - [About](#about)
 - [Features](#features)
 - [Installation](#installation)
-- [Screenshots](#screenshots)
+
 
 ## About
 
