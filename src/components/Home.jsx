@@ -12,7 +12,7 @@ function Home() {
           duration: 2,
           y: { duration: 0.6 },
         }}
-        className="relative bg-transparent flex flex-col h-full justify-center items-center text-center px-5 z-10"
+        className="relative bg-transparent flex flex-col h-full justify-center items-center text-center px-5 z-1"
       >
         <h1 className="text-white  text-5xl sm:text-5xl md:text-7xl lg:text-7xl font-ConcertOne">
           WELCOME

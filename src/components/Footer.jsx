@@ -40,20 +40,23 @@ function Footer({ setPageIndex, pageIndex }) {
     }
   };
   return (
-    <footer className="absolute bottom-0 px-2 gap-2 md:gap-0  flex flex-row w-full justify-between items-center z-10">
-      <div className="flex justify-evenly items-center text-white gap-10 pb-5 md:pl-5">
+    <footer className="absolute bottom-0 px-2 gap-2 md:gap-0  flex flex-row w-full justify-evenly md:justify-between items-center z-1">
+      <div className="flex w-full md:w-fit md:justify-evenly justify-around items-center text-white md:gap-10 pb-5 md:pl-5">
         <a href="https://github.com/Amarr7777" className="cursor-pointer">
-          <Github/>
+          <Github />
         </a>
-        <a href="http://www.linkedin.com/in/amargnath" className="cursor-pointer">
-          <LinkedIn/>
+        <a
+          href="http://www.linkedin.com/in/amargnath"
+          className="cursor-pointer"
+        >
+          <LinkedIn />
         </a>
         <a href="mailto:amarpradeep0805@gmail.com" className="cursor-pointer">
-          <Mail/>
+          <Mail />
         </a>
       </div>
 
-      <div className="flex justify-evenly items-center text-white gap-10 pb-5 md:pr-5">
+      <div className="hidden md:flex justify-evenly items-center text-white gap-10 pb-5 md:pr-5">
         <motion.button
           whileHover={{
             scale: 1.2,
@@ -62,7 +65,7 @@ function Footer({ setPageIndex, pageIndex }) {
           whileTap={{ scale: 0.9 }}
           onClick={navigateUP}
         >
-          <ChevronUp/>
+          <ChevronUp />
         </motion.button>
         <motion.button
           whileHover={{
@@ -72,7 +75,7 @@ function Footer({ setPageIndex, pageIndex }) {
           whileTap={{ scale: 0.9 }}
           onClick={navigateDown}
         >
-          <ChevronDown/>
+          <ChevronDown />
         </motion.button>
       </div>
     </footer>

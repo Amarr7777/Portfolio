@@ -32,7 +32,7 @@ function SectionOne() {
   }, []);
   return (
     <div className="relative h-screen w-full">
-      <Header pageIndex={pageIndex} />
+      <Header pageIndex={pageIndex} setPageIndex={setPageIndex} />
       {pageIndex === 0 && <Home />}
       {pageIndex === 1 && <Skills />}
       {pageIndex === 2 && <Projects />}

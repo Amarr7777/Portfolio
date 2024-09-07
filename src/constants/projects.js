@@ -12,10 +12,10 @@ const projects = [
         "VocalVision: A web app for visually impaired, converting images to audio descriptions. Uses YOLO for object detection, gTTS for narration. Accessible and easy integration. Frontend: React.js, Backend: Flask, CV: OpenCV, TTS: gTTS. #AccessibilityTech",
     },
     {
-      name: "BookStore",
-      link: "https://github.com/Amarr7777/bookstore.git",
+      name: "EventEase",
+      link: "https://github.com/Amarr7777/EventEase.git",
       content:
-        "This a bookstore where data is fetched from NY times API and shown in the web app and a search bar is which is completely functional",
+        "EventEase is a scalable event management app using React for the frontend and Node.js with Express for the backend. JWT secures authentication, and RabbitMQ facilitates communication between the User and Event services, enabling reliable, asynchronous messaging in a microservices architecture.",
     },
     {
       name: "GroomGuard",

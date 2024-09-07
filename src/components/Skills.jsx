@@ -21,7 +21,7 @@ function Skills() {
       (newIndex + 2) % indices.length,
     ]);
     setIndexMobile(newIndex);
-    setDirection("prev")
+    setDirection("prev");
   };
 
   const next = () => {
@@ -32,7 +32,7 @@ function Skills() {
       (newIndex + 2) % indices.length,
     ]);
     setIndexMobile(newIndex);
-    setDirection("next")
+    setDirection("next");
   };
 
   return (
@@ -40,20 +40,24 @@ function Skills() {
       <div className="flex h-screen items-center justify-evenly gap-5 px-5 w-full ">
         <button
           onClick={prev}
-          className="text-white bg-transparent absolute left-5 z-50"
+          className="text-white bg-transparent flex items-center justify-center absolute left-5 md:z-10 md:bg-gray-50 md:p-2 md:rounded-full md:bg-opacity-50"
         >
           <ChevronLeft />
         </button>
-        <SkillCard indexArray={indexArray} indices={indices} direction={direction} />
-        <SkillCardMobile indexMobile={indexMobile} direction={direction}/>
+        <SkillCard
+          indexArray={indexArray}
+          indices={indices}
+          direction={direction}
+        />
+        <SkillCardMobile indexMobile={indexMobile} direction={direction} />
         <button
           onClick={next}
-          className="text-white bg-transparent absolute right-5 z-50"
+          className="text-white bg-transparent flex items-center justify-center absolute right-5 md:z-10 md:bg-gray-50 md:p-2 md:rounded-full md:bg-opacity-50"
         >
           <ChevronRight />
         </button>
       </div>
-      <div className="absolute w-full bottom-[15%] sm:bottom-[20%] flex items-end justify-center px-2 sm:px-5 space-x-2 sm:space-x-5 text-white font-ConcertOne z-10">
+      <div className="absolute w-full bottom-[15%] sm:bottom-[20%] flex items-end justify-center px-2 sm:px-5 space-x-2 sm:space-x-5 text-white font-ConcertOne z-1">
         {indices.map((index) => (
           <div
             key={index}
