@@ -6,6 +6,7 @@ import ChevronRight from "../assets/ChevronRight";
 import ChevronLeft from "../assets/ChevronLeft";
 import CircleFill from "../assets/CircleFill";
 import Circle from "../assets/Circle";
+import { useSwipeable } from "react-swipeable"; // Import the swipeable hook
 
 function Skills() {
   const [indexArray, setIndexArray] = useState([0, 1, 2]);
@@ -35,9 +36,18 @@ function Skills() {
     setDirection("next");
   };
 
+  // Swipe handlers for mobile swipe gestures
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => prev(),
+    onSwipedRight: () => next(),
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: true, // optional: allows tracking mouse swipes for desktop as well
+  });
+
   return (
     <>
-      <div className="flex h-screen items-center justify-evenly gap-5 px-5 w-full ">
+      {/* Wrap the component in the swipe handler */}
+      <div {...swipeHandlers} className="flex h-screen items-center justify-evenly gap-5 px-5 w-full">
         <button
           onClick={prev}
           className="text-white bg-transparent flex items-center justify-center absolute left-5 md:z-10 md:bg-gray-50 md:p-2 md:rounded-full md:bg-opacity-50"
